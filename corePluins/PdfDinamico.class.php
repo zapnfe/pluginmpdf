@@ -12,6 +12,7 @@ class PdfDinamico
     public $path;
     public $Format;
     public $name;
+
 //, $header, $footer, $habilitar_password, $password, $path, $Format
     public function GerarPDF($html,string $habilitar_password, $password, $path, $footer,$name,$header)
     {
