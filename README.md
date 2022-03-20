@@ -29,15 +29,11 @@ The simplest usage (since version 7.0) of the library would be as follows:
 
  INSTALAÇÃO NA APLICAÇÃO
 
- include './corePluins/PdfDinamico.class.php';
-
+include './corePluins/PdfDinamico.class.php';
 $PDFretorno = new PdfDinamico;
 $header = 'conteudo do cabeçario ';
-
 $html = 'HTML'; // conteudo html
-
-$footer = 'footer' // conteudo do roda pe
-
+$footer = 'footer' // conteudo do roda pe 
 $habilitar_password = 0; //habilita senha no pdf
 $password = 123456789; // se for habilitado for igual 1  ele requer senha digitada
 $path = 'app/output/pdf'; // pasta onde vai ser salvo pdf
