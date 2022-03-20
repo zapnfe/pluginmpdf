@@ -32,7 +32,7 @@ class PdfDinamico
         }
         $mpdf->SetHeader($header);
 
-        $mpdf->SetFooter($footer);
+        $mpdf->SetFooter($footer.$Config['DESCRICAO']);
         if ($habilitar_password == 1) {
             $mpdf->SetProtection(array(), 'UserPassword', $password);
         }
