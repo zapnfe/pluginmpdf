@@ -22,5 +22,7 @@ PHP mbstring and gd extensions have to be loaded.
 Usage
 The simplest usage (since version 7.0) of the library would be as follows:
 
+ Fonte de estudo:
  
+ https://github.com/mpdf/mpdf
 
