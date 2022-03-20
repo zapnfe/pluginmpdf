@@ -26,24 +26,17 @@ The simplest usage (since version 7.0) of the library would be as follows:
  
  https://github.com/mpdf/mpdf
 
+
+ INSTALAÇÃO NA APLICAÇÃO
+
  include './corePluins/PdfDinamico.class.php';
 
 $PDFretorno = new PdfDinamico;
-$header = '
-<div style="text-align: right; font-weight: bold;">
-    Página - {PAGENO}
-</div>';
+$header = 'conteudo do cabeçario ';
 
 $html = 'HTML'; // conteudo html
 
-$footer = '<table width="100%" style="vertical-align: bottom; font-family: serif;
-font-size: 8pt; color: #000000; font-weight: bold; font-style: italic;">
-<tr>
-    <td width="33%"><span style="font-weight: bold; font-style: italic;"> </span></td>
-    <td width="33%" align="center" style="font-weight: bold; font-style: italic;">{PAGENO}/{nbpg}</td>
-    <td width="33%" style="text-align: right; ">{DATE d/m/Y H:i:s}</td>
-</tr>
-</table>';
+$footer = 'footer' // conteudo do roda pe
 
 $habilitar_password = 0; //habilita senha no pdf
 $password = 123456789; // se for habilitado for igual 1  ele requer senha digitada
