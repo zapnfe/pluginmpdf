@@ -1,6 +1,9 @@
 
 <?php
 include 'vendor/autoload.php';
+
+use Mpdf\Mpdf;
+
 class PdfDinamico
 {
 
@@ -12,24 +15,39 @@ class PdfDinamico
     public $path;
     public $Format;
     public $name;
-
+    public $marca;
 //, $header, $footer, $habilitar_password, $password, $path, $Format
-    public function GerarPDF($html,string $habilitar_password, $password, $path, $footer,$name,$header)
+    public function GerarPDF($html, $habilitar_password, $password, $path, $footer, $name, $header, $Format, $Config,$marca)
     {
-    
-        $caminho = $path . $name.'.pdf';
 
-        $mpdf = new \Mpdf\Mpdf();
+        $caminho = $path . $name . '.pdf';
+
+        switch ($Format) {
+            case 'V':
+                $mpdf = new Mpdf(['mode' => 'utf-8', 'format' => [190, 236]]);
+                break;
+            case 'H':
+                $mpdf = new Mpdf(['orientation' => 'L']);
+                break;
+        }
         $mpdf->SetHeader($header);
-        $mpdf->WriteHTML($html);
-    
+
         $mpdf->SetFooter($footer);
         if ($habilitar_password == 1) {
             $mpdf->SetProtection(array(), 'UserPassword', $password);
         }
 
+        $mpdf->SetProtection(array('print'));
+        $mpdf->SetTitle($Config['empresa']);
+        $mpdf->SetAuthor($Config['CNPJ']);
+        $mpdf->SetWatermarkText($marca);
         $mpdf->showWatermarkText = true;
-        $arquivo = $mpdf->Output($caminho, 'F');
+        $mpdf->watermark_font = 'DejaVuSansCondensed';
+        $mpdf->watermarkTextAlpha = 0.1;
+        $mpdf->SetDisplayMode('fullpage');
+
+        $mpdf->WriteHTML($html);
+
         $PDF = $mpdf->Output();
 
         if (is_dir($path)) //VERIFICA SE REALMENTE É UM DIRETORIO
@@ -51,8 +69,6 @@ class PdfDinamico
 
                 }}}
 
-        return $arquivo;
+        return $PDF;
     }
 }
-
-
