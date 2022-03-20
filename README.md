@@ -22,10 +22,10 @@ PHP mbstring and gd extensions have to be loaded.
 Usage
 The simplest usage (since version 7.0) of the library would be as follows:
 
-<?php
+ 
+como chamar a lib
+//require_once __DIR__ . '/vendor/autoload.php';
 
-require_once __DIR__ . '/vendor/autoload.php';
-
-$mpdf = new \Mpdf\Mpdf();
-$mpdf->WriteHTML('<h1>Hello world!</h1>');
-$mpdf->Output();
+//$mpdf = new \Mpdf\Mpdf();
+//$mpdf->WriteHTML('<h1>Hello world!</h1>');
+//$mpdf->Output();
