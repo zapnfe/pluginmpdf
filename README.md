@@ -1,7 +1,7 @@
 # pluginmpdf
 plugin de criação de php através do HTML
 
-Para inciar nosso pliguin devemos instalar a lib abaixo.
+Para inciar nosso pluginmpdf devemos instalar a lib abaixo.
 
 
 mPDF is a PHP library which generates PDF files from UTF-8 encoded HTML.
