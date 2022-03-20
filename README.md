@@ -23,9 +23,4 @@ Usage
 The simplest usage (since version 7.0) of the library would be as follows:
 
  
-como chamar a lib
-//require_once __DIR__ . '/vendor/autoload.php';
 
-//$mpdf = new \Mpdf\Mpdf();
-//$mpdf->WriteHTML('<h1>Hello world!</h1>');
-//$mpdf->Output();
